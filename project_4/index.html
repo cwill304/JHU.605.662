@@ -2,15 +2,62 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-    <!-- <script src="jquery-csv.js"></script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap" rel="stylesheet">
+    <script src="https://d3js.org/d3.v4.js"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Chad Williamson - Project 4</title>
   </head>
   <body>
     <div id="content">
-        sup fam
+        <div id="panel-left" class="panel">
+            <div id="edge-color-div" class="panel-section">
+                <span class="section-header">Select Edge Color:</span>
+                <input type="color" id="edge-color" name="edge-color" class="color-picker" value="#000000">
+            </div>
+            <div id="edge-weight-div" class="panel-section">
+                <span class="section-header">Show Edge Weight:</span>
+                <label class="switch">
+                    <input id="edge-weight-switch" type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+            </div>
+            <div id="vertex-color-div" class="panel-section">
+                <span class="section-header">Select Vertex Color:</span>
+                <input type="color" id="vertex-color" name="vertex-color" class="color-picker" value="#69b3a2">
+            </div>
+            <div id="vertex-shape-div" class="panel-section">
+                <span class="section-header">Select Vertex Shape:</span>
+                <select name="shape-picker" id="shape-picker">
+                    <option value="1">Circle</option>
+                    <option value="2">Square</option>
+                    <option value="3">Star</option>
+                    <option value="4">Cross</option>
+                    <option value="5">Diamond</option>
+                    <option value="6">Triangle</option>
+                    <option value="7">Wye</option>
+                  </select>
+            </div>
+            <div id="vertex-label-div" class="panel-section">
+                <span class="section-header">Show Vertex Label:</span>
+                <label class="switch">
+                    <input id="vertex-label-switch" type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+            </div>
+            <div id="bg-color-div" class="panel-section">
+                <span class="section-header">Select Background Color:</span>
+                <input type="color" id="bg-color" name="bg-color" class="color-picker" value="#fafafc">
+            </div>
+            <div id="submit-button-div" class="panel-section">
+                <button id="submitBtn" type="button" onclick="redraw()"><span>Update</span></button>
+            </div>
+        </div>
+        <div id="viz-right" class="panel"></div>
+        <div id="loading-overlay" class="panel fadeIn"><span>Loading</span></div>
     </div>
   </body>
-</html>
+</html> 

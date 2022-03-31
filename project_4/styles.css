@@ -1,0 +1,170 @@
+
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+    body {
+        background-color: #eaeaec;
+    }
+
+    #content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: min(180vh, 90vw);
+        height: min(90vh, 45vw);
+        transform: translate(-50%,-50%);
+    }
+
+    #panel-left {
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 18%;
+    }
+
+    #viz-right {
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: 78%;
+    }
+
+    .panel {
+        background-color: #fafafc;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        border: 1px solid #fff;
+    }
+
+    #submitBtn {
+        position: absolute;
+        display: block;
+        padding: 0;
+        overflow: hidden;
+        border-width: 0;
+        outline: none;
+        border-radius: 2px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+        background-color: #47baf0;
+        color: #fafafa;
+        cursor: pointer;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    #submitBtn:hover {
+        background-color: #52c8ff;
+    }
+
+    #submitBtn span {
+        display: block;
+        padding: 12px 24px;
+    }
+
+    #loading-overlay {
+        position:absolute;
+        background-color: #fafafc;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+    }
+
+    #loading-overlay span {
+        font-size: 2em;
+        color: #414141;
+        position: absolute;
+        left: 50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+    }
+
+    .panel-section {
+        position:relative;
+        width: 100%;
+        height: calc(100% / 8);
+        border-bottom: 1px solid #ddd;
+    }
+
+    .panel-section:nth-of-type(7) {
+        border: none;
+    }
+
+    .section-header {
+        text-align:center;
+        color: #626265;
+        margin: 10px;
+        font-size: .8em;
+        display: block;
+    }
+
+    .color-picker, #shape-picker {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        width: calc(100% - 20px);
+        border: 1px solid #bbb;
+        cursor: pointer;
+    }
+
+    /* Toggle switch css based upon: 
+     * https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_switch
+     */
+    .switch {
+        position: absolute;
+        display: inline-block;
+        width: calc(100% - 20px);
+        left: 10px;
+        height: auto;
+      }
+      
+      .switch input { 
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 20%;
+        left: 0;
+        bottom: 0;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+        border: 4px solid #ccc;
+        box-sizing: border-box;
+      }
+      
+      input:checked + .slider {
+        background-color: #2196F3;
+      }
+      
+      input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+      }
+      
+      input:checked + .slider:before {
+        -webkit-transform: translateX(400%);
+        -ms-transform: translateX(400%);
+        transform: translateX(400%);
+        border: 4px solid #2196F3;
+      }
